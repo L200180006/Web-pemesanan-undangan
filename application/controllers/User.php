@@ -12,11 +12,13 @@ class User extends CI_Controller
     public function index()
     {
         $this->load->view('user/beranda');
+        $this->load->view('templates/user_footer');
     }
 
     public function tentang()
     {
         $this->load->view('user/hlm_tentang');
+        $this->load->view('templates/user_footer');
     }
 
     public function produk()
@@ -24,6 +26,7 @@ class User extends CI_Controller
         $undangan['undangan'] = $this->db->get('undangan')->result_array();
 
         $this->load->view('user/hlm_produk', $undangan);
+        $this->load->view('templates/user_footer');
     }
 
     public function detail_undangan($id)
@@ -31,6 +34,7 @@ class User extends CI_Controller
         $undangan['undangan'] = $this->db->get_where('undangan', ['id_undangan' => $id])->result_array();
 
         $this->load->view('user/hlm_detail_produk', $undangan);
+        $this->load->view('templates/user_footer');
     }
 
     public function pesan_undangan($id)
@@ -38,6 +42,7 @@ class User extends CI_Controller
         $undangan['undangan'] = $this->db->get_where('undangan', ['id_undangan' => $id])->result_array();
 
         $this->load->view('user/hlm_pemesanan', $undangan);
+        $this->load->view('templates/user_footer');
     }
 
     public function buat_pesanan()
@@ -47,7 +52,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('no_telepon', 'Nomor Telepon', 'required|trim');
 
         if ($this->form_validation->run() == FALSE) {
-            echo 'data kurang';
+            $this->load->view('user/hlm_error');
         } else {
             $nama_pemesan = $this->input->post('nama_pemesan', true);
             $no_telepon = $this->input->post('no_telepon', true);
@@ -61,5 +66,17 @@ class User extends CI_Controller
 
             redirect('User/produk');
         }
+    }
+
+    public function info_pemesanan()
+    {
+        $this->load->view('user/hlm_info_pemesanan');
+        $this->load->view('templates/user_footer');
+    }
+
+    public function info_pembayaran()
+    {
+        $this->load->view('user/hlm_info_pembayaran');
+        $this->load->view('templates/user_footer');
     }
 }
