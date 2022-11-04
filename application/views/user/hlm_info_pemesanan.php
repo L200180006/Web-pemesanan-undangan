@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DWI PUTRA - Produk</title>
+    <title>DWI PUTRA - Pemesanan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
@@ -43,9 +43,9 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="<?= base_url('user'); ?>" class="nav-item nav-link">Home</a>
                     <a href="<?= base_url('user/tentang'); ?>" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="<?= base_url('user/produk'); ?>" class="nav-item nav-link active">Produk</a>
+                    <a href="<?= base_url('user/produk'); ?>" class="nav-item nav-link">Produk</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Informasi</a>
                         <div class="dropdown-menu m-0">
                             <a href="<?= base_url('user/info_pemesanan'); ?>" class="dropdown-item">Pemesanan</a>
                             <a href="<?= base_url('user/infor_pembayaran'); ?>" class="dropdown-item">Pembayaran</a>
@@ -56,35 +56,24 @@
         </nav>
     </div>
     <!-- Navbar End -->
-    <?php
-    function number_with_dot($number, $sign = false)
-    {
-        if ($sign) {
-            return 'Rp ' . number_format($number, 0, ',', '.');
-        }
-        return number_format($number, 0, ',', '.');
-    }
-    ?>
+
     <!-- Content Start -->
-    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-        <h1 class="display-5 text-uppercase mb-3 mt-3">Katalog <span class="text-primary">Produk</span></h1>
-    </div>
-    <div class="container mx-auto">
-        <div class="row">
-            <?php $i = 1; ?>
-            <?php foreach ($undangan as $undangan) : ?>
-                <div class="col-md-3 mb-4">
-                    <div class="card position-relative" style="width: 15rem;">
-                        <img src="<?= base_url('assets/img/upload/') . $undangan['gambar']; ?>" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $undangan['judul']; ?></h5>
-                            <p class="card-text"><?= number_with_dot($undangan['harga'], true); ?></p>
-                            <a href="<?= base_url('User/detail_undangan/') . $undangan['id_undangan']; ?>" class="btn btn-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <?php $i++; ?>
-            <?php endforeach; ?>
-        </div>
+    <div class="container-fluid py-5 px-5">
+        <h2 class="display-5 mb-4"><span class="text-primary">Offline</span> Store</h2>
+        <h5 class="mb-5 text-body">
+            <p>Jl. Amarta Raya, Pulosari, Sroyo, Kec. Jaten, Kabupaten Karanganyar, Jawa Tengah 57731</p>
+        </h5>
+        <hr>
+        <h2 class="display-5 mb-4 mt-3">Pemesanan <span class="text-primary">Online</span></h2>
+        <h5 class="mb-5 text-body">
+            <p>1. Klik menu produk</p>
+            <p>2. Klik tombol "Detail" pada desain undangan yang anda inginkan</p>
+            <p>3. Pilih "Pesan Undangan"</p>
+            <p>4. Masukkan nama dan nomor telepon anda</p>
+            <p>5. Pilih "Pesan"</p>
+        </h5>
+        <h5 class="mb-5 text-body">
+            <p>Atau anda dapat menghubungi kami melalui Whatsapp di 081229333222</p>
+        </h5>
     </div>
     <!-- Content End -->

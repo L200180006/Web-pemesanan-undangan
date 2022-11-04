@@ -46,7 +46,6 @@
                                         <td><img src="<?= base_url('assets/img/upload/') . $undangan['gambar']; ?>" width="200"></td>
                                         <td><img src="<?= base_url('assets/img/upload/') . $undangan['gambar_1']; ?>" width="200"></td>
                                         <td>
-                                            <a href="<?= base_url('Kelola_undangan/edit_undangan/' . $undangan['id_undangan']); ?>" class="badge badge-success">edit</a>
                                             <a onclick="return confirm('Apakah anda ingin menghapus data ini?')" href="<?= base_url('Kelola_undangan/hapus_undangan/' . $undangan['id_undangan']); ?>" class="badge badge-danger">delete</a>
                                         </td>
                                     </tr>
