@@ -7,7 +7,8 @@ class Kelola_pengguna extends CI_Controller
 	{
 		$data['title'] = 'Pengguna';
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-		$userListdata['user'] = $this->db->get('user')->result_array();
+		$this->load->model('admin');
+		$userListdata['user'] = $this->admin->getAlluser();
 
 
 		$this->load->view('templates/header', $data);
