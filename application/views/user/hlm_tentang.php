@@ -187,7 +187,7 @@
                 <p class="mb-0">&copy; <a class="text-primary" href="#">Dwi Putra Production</a>. All Rights Reserved.</p>
             </div>
             <div class="py-4 px-5 bg-primary footer-shape position-relative text-center text-md-end">
-                <p class="mb-0">Designed by <a class="text-dark" href="https://htmlcodex.com">Bachtiar Nuhri</a></p>
+                <p class="mb-0">Designed by <a class="text-dark" href="https://htmlcodex.com">Galih Prayoga</a></p>
             </div>
         </div>
     </div>
